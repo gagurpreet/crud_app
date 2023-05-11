@@ -1,12 +1,32 @@
 {% extends 'base.html' %}
+
 {% block content %}
-<h1>Online Languages</h1>
+	<h1>Online Languages</h1>
 
-{% if current_user %}
-<h3>Welcome to Online Languages Platform {{ current_user['first_name'] }}</h3>
+	{% if current_user %}
+	<h3>Welcome to Online Languages Platform {{ current_user['first_name'] }}</h3>
 
-{% else %}
-<a href="/users/new">Sign up</a>
-<a href="/sessions/new">Log in</a>
-{% endif %}
+		<section class="controls">
+			<form action="/sessions/delete" method="POST">
+			<button>Log out</button>
+			</form>
+		</section>  
+
+		<section class="languages">
+			{% for language in languages: %}
+				<section class="language">
+					<header>
+						<h2>{{ language['name'] }}</h2>
+						<h2>{{ language['length_of_course'] }}</h2>
+						<h2>{{ language['fee'] }}</h2>
+					</header>
+				</section>
+			{% endfor %}
+		</section>
+
+	{% else %}
+	<a href="/users/new">Sign up</a>
+	<a href="/sessions/new">Log in</a>
+	{% endif %}
+
 {% endblock %}
