@@ -1,11 +1,16 @@
 CREATE DATABASE online_learning_db;
 \c online_learning_db
 
-CREATE TABLE languages(
+CREATE TABLE courses(
   id SERIAL PRIMARY KEY,
   name TEXT,
   length_of_course TEXT,
   fee INTEGER
+);
+
+INSERT INTO courses(name, length_of_course, fee  )
+VALUES('software Engg.', '3 months' , 2000
+
 );
 
 CREATE TABLE users(

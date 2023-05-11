@@ -12,13 +12,13 @@
 			</form>
 		</section>  
 
-		<section class="languages">
-			{% for language in languages: %}
-				<section class="language">
+		<section class="courses">
+			{% for course in courses: %}
+				<section class="course">
 					<header>
-						<h2>{{ language['name'] }}</h2>
-						<h2>{{ language['length_of_course'] }}</h2>
-						<h2>{{ language['fee'] }}</h2>
+						<h2>{{ course['name'] }}</h2>
+						<h2>{{ course['length_of_course'] }}</h2>
+						<h2>{{ course['fee'] }}</h2>
 					</header>
 				</section>
 			{% endfor %}
