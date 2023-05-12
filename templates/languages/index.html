@@ -12,6 +12,12 @@
 			</form>
 		</section>  
 
+		<section class="controls">
+			<form action="/sessions/my_profile" method="POST">
+			<button>My Account</button>
+			</form>
+		</section>
+		
 		<section class="courses">
 			{% for course in courses: %}
 				<section class="course">
@@ -19,6 +25,13 @@
 						<h2>{{ course['name'] }}</h2>
 						<h2>{{ course['length_of_course'] }}</h2>
 						<h2>{{ course['fee'] }}</h2>
+
+						<section class="controls">
+							<form action="/languages/{{course['id']}}/enroll" method="POST">
+								<button>Enroll</button>
+							</form>
+						</section>
+
 					</header>
 				</section>
 			{% endfor %}

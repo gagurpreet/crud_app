@@ -19,3 +19,9 @@ CREATE TABLE users(
   email TEXT,
   password_digest TEXT
 );
+
+CREATE TABLE enrollments(
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER,
+  course_id INTEGER
+);
