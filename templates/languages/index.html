@@ -3,8 +3,8 @@
 {% block content %}
 	<h1>Online Languages</h1>
 
-	{% if current_user %}
-	<h3>Welcome to Online Languages Platform {{ current_user['first_name'] }}</h3>
+{% if current_user %}
+		<h3>Welcome to Online Languages Platform {{ current_user['first_name'] }}</h3>
 
 		<section class="controls">
 			<form action="/sessions/delete" method="POST">
@@ -24,9 +24,9 @@
 			{% endfor %}
 		</section>
 
-	{% else %}
+{% else %}
 	<a href="/users/new">Sign up</a>
 	<a href="/sessions/new">Log in</a>
-	{% endif %}
+{% endif %}
 
 {% endblock %}

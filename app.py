@@ -17,6 +17,3 @@ app.register_blueprint(sessions_routes, url_prefix='/sessions')
 def index():
     return redirect('/languages')
 
-@app.route('/users/new')
-def users_new():
-  return render_template('users/new.html') 

@@ -9,8 +9,7 @@ CREATE TABLE courses(
 );
 
 INSERT INTO courses(name, length_of_course, fee  )
-VALUES('software Engg.', '3 months' , 2000
-
+VALUES('software Engg.', '3 months' , 2000) ,( 'python', '6 months', 3000
 );
 
 CREATE TABLE users(
