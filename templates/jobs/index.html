@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>Software Engineering Job Portal</h1>
+
+{% if current_user %}
+		<h3>Welcome jobs Portal {{ current_user['first_name'] }}</h3>
+
+		<section class="controls">
+			<form action="/sessions/delete" method="POST">
+			<button>Log out</button>
+			</form>
+
+			<a href="/jobs/new">Add job</a>	
+		</section>  
+		
+		<section class="jobs">
+			{% for job in jobs: %}
+				<section class="job">
+					<header>
+						<h2>{{ job['company_name'] }}</h2>
+						<h2>{{ job['job_link'] }}</h2>
+						<h2>{{ job['job_level'] }}</h2>
+
+						<section class="controls">
+							<a href="/jobs/{{ job['id'] }}/edit">Edit</a>
+
+        					<form action="/jobs/{{ job['id'] }}/delete" method="POST">
+          						<button>Delete</button>
+        					</form>
+
+							<form action="/jobs/{{job['id']}}/likes" method="POST">
+								<button>Enroll</button>
+							</form>
+						</section>
+
+					</header>
+				</section>
+			{% endfor %}
+		</section>
+
+{% else %}
+	<a href="/users/new">Sign up</a>
+	<a href="/sessions/new">Log in</a>
+{% endif %}
+
+{% endblock %}

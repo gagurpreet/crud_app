@@ -1,15 +1,17 @@
-CREATE DATABASE online_learning_db;
-\c online_learning_db
+CREATE DATABASE job_portal_db;
+\c job_portal_db
 
-CREATE TABLE courses(
+CREATE TABLE jobs(
   id SERIAL PRIMARY KEY,
-  name TEXT,
-  length_of_course TEXT,
-  fee INTEGER
+  company_name TEXT,
+  job_link TEXT,
+  job_level TEXT
 );
 
-INSERT INTO courses(name, length_of_course, fee  )
-VALUES('software Engg.', '3 months' , 2000) ,( 'python', '6 months', 3000
+INSERT INTO jobs(company_name, job_link, job_level  )
+VALUES('Babcock Pty Ltd
+', 'https://www.seek.com.au/job/67177411?type=standout#sol=4c3d9c7106c96e69af995cb0ba6fb087cd752994' , 'Experienced') ,( 'Paxus', 'https://www.seek.com.au/job/67328547?type=standard#sol=5e36d3e519a840d47fca544253f17207db812349', 'Experienced'
+), ( 'GradConnection', 'https://www.seek.com.au/job/66856481?type=standard#sol=05aaf1548c10fdb09dc222e70aaafd8eca168206', 'graduate'
 );
 
 CREATE TABLE users(
@@ -20,8 +22,8 @@ CREATE TABLE users(
   password_digest TEXT
 );
 
-CREATE TABLE enrollments(
+CREATE TABLE likes(
   id SERIAL PRIMARY KEY,
   user_id INTEGER,
-  course_id INTEGER
+  job_id INTEGER
 );

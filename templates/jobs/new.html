@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Add Job</h1>
+<form action="/jobs" method="POST">
+  <label for="">Company Name:</label>
+  <input type="text" name="company_name">
+
+  <label for="">Job Link:</label>
+  <input type="text" name="job_link">
+
+  <label for="">Job Level:</label>
+  <input type="text" name="job_level">
+
+  <button>Add Job</button>
+</form>
+{% endblock %}
