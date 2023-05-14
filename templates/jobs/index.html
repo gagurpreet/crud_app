@@ -4,7 +4,7 @@
 	<h1>Software Engineering Job Portal</h1>
 
 {% if current_user %}
-		<h3>Welcome jobs Portal {{ current_user['first_name'] }}</h3>
+		<h3>Welcome jobs Portal {{ current_user['first_name'] }},</h3>
 
 		<section class="controls">
 			<form action="/sessions/delete" method="POST">
@@ -18,9 +18,9 @@
 			{% for job in jobs: %}
 				<section class="job">
 					<header>
-						<h2>{{ job['company_name'] }}</h2>
-						<h2>{{ job['job_link'] }}</h2>
-						<h2>{{ job['job_level'] }}</h2>
+						<h3>Company Name: {{ job['company_name'] }}</h3>
+						<h4><a href="{{ job['job_link'] }}">click here for job description</a></h4>
+						<h3>Job Level: {{ job['job_level'] }}</h3>
 
 						<section class="controls">
 							<a href="/jobs/{{ job['id'] }}/edit">Edit</a>
@@ -30,8 +30,17 @@
         					</form>
 
 							<form action="/jobs/{{job['id']}}/likes" method="POST">
-								<button>Enroll</button>
+								<button>Like</button>
 							</form>
+
+							<form action="/jobs/{{job['id']}}/comments" method="POST">
+															
+								<label for="content">Comment:</label>
+								<textarea id="content" name="content" required></textarea><br>
+							
+								<input type="submit" value="Submit">
+							  </form>
+
 						</section>
 
 					</header>

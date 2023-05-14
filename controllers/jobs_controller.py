@@ -1,5 +1,5 @@
-from flask import render_template, redirect, session
-from models.job import all_jobs, get_job, create_job,update_job, delete_job, like_job 
+from flask import render_template, redirect, request, session
+from models.job import all_jobs, get_job, create_job,update_job, delete_job, like_job, comment_job
 from services.session_info import current_user
 
 def index():
@@ -34,4 +34,10 @@ def delete(id):
 def like(id):
   like_job(id, session['user_id'])
   return redirect('/')
+
+def comment(id):
+  content = request.form.get('content')
+  comment_job(id, content)
+  return redirect('/')
+
 

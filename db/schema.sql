@@ -27,3 +27,8 @@ CREATE TABLE likes(
   user_id INTEGER,
   job_id INTEGER
 );
+
+CREATE TABLE comments(
+  id SERIAL PRIMARY KEY,
+   content TEXT
+);
