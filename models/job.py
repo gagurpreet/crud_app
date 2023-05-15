@@ -1,7 +1,7 @@
 from db.db import sql
 
 def all_jobs():
-  return sql('SELECT * FROM jobs ORDER BY id')
+  return sql(" SELECT * FROM jobs ORDER BY id")
 
 def get_job(id):
   jobs = sql("SELECT * FROM jobs WHERE id = %s", [id])
@@ -19,5 +19,14 @@ def delete_job(id):
 def like_job(job_id, user_id):
   sql("INSERT INTO likes(user_id, job_id) VALUES(%s, %s) RETURNING *", [user_id, job_id])
 
-def comment_job(job_id, user_id):
-  sql("INSERT INTO comments(user_id, job_id) VALUES(%s, %s) RETURNING *", [user_id, job_id])
+def comment_job(job_id, user_id, content):
+  sql("INSERT INTO comments(user_id, job_id, content) VALUES(%s, %s, %s) RETURNING *", [user_id, job_id, content])
+
+def get_comment(id):
+  comment = sql("SELECT * FROM comments WHERE id = %s", [id])
+  return comment[0]
+
+def get_job_by_id(id):
+  job = sql("SELECT * FROM jobs WHERE id = %s", [id])
+  return job[0]
+

@@ -4,7 +4,7 @@
 	<h1>Software Engineering Job Portal</h1>
 
 {% if current_user %}
-		<h3>Welcome to the Job Portal {{ current_user['first_name'] }},</h3>
+		<h3>Welcome to the Jobs Portal {{ current_user['first_name'] }},</h3>
 
 		<section class="controls">
 			<form action="/sessions/delete" method="POST">
@@ -33,6 +33,10 @@
 
 							<form action="/jobs/{{job['id']}}/likes" method="POST">
 								<button>Like</button>
+							</form>
+
+							<form action="/jobs/{{job['id']}}/more" method="POST">
+								<button>More</button>
 							</form>
 
 							<form action="/jobs/{{job['id']}}/comments" method="POST">

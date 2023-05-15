@@ -5,6 +5,7 @@ h1{
    box-sizing: border-box 20px;
    box-shadow: 10px;
    text-align: center;
+   text-emphasis-color: dark blue;
    text-decoration: solid grey;
    background-color: rgb(190, 185, 219);
 }
@@ -17,6 +18,7 @@ h3{
 body {
 	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 	background-color: cornflowerblue;
+	
 }
 
 .jobs {
@@ -34,7 +36,7 @@ a, button{
 	font-size: 0.8rem;
 	text-decoration: solid;
 	cursor: pointer;
-	border-radius: 20px;
+	border-radius: 5px;
 }
 
 .job h3{
@@ -60,4 +62,15 @@ a, button{
 .controls a{
 	display: inline;
 	height: 23px;
+}
+
+.job label{
+display: flex;
+flex-direction:column;
+
+}
+
+body a{
+	display: inline-flex;
+	align-items: center;
 }

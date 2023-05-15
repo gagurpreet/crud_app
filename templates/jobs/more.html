@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>Software Engineering Job Portal</h1>
+
+{% if current_user %}
+		<h3>Welcome to the Jobs Portal {{ current_user['first_name'] }},</h3>
+			
+				<section class="job">
+					<header>
+						<h3>Company Name: {{ job['company_name'] }}</h3>
+						<h3>Job Level: {{ job['job_level'] }}</h3>
+						<h4><a href="{{ job['job_link'] }}">click here for job description</a></h4>
+
+						<section class="comment">
+								<header>
+									<h3>Comment: {{ comment['content'] }}</h3>
+								</header>
+						</section>
+					</header>
+				</section>
+{% else %}
+	<a href="/users/new">Sign up</a>
+	<a href="/sessions/new">Log in</a>
+{% endif %}
+
+{% endblock %}

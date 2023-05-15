@@ -33,3 +33,11 @@ CREATE TABLE comments(
   user_id INTEGER,
   job_id INTEGER
 );
+
+ALTER TABLE comments ADD COLUMN content TEXT;
+
+-- SELECT jobs.id, jobs.company_name, jobs.job_link, jobs.job_level, comments.content
+-- FROM jobs
+-- INNER JOIN comments ON jobs.id = comments.job_id;
+
+
