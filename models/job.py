@@ -19,5 +19,5 @@ def delete_job(id):
 def like_job(job_id, user_id):
   sql("INSERT INTO likes(user_id, job_id) VALUES(%s, %s) RETURNING *", [user_id, job_id])
 
-def comment_job(id, content):
-  sql("INSERT INTO comments(id, content) VALUES(%s, %s) RETURNING *", [id, content])
+def comment_job(job_id, user_id):
+  sql("INSERT INTO comments(user_id, job_id) VALUES(%s, %s) RETURNING *", [user_id, job_id])

@@ -1,6 +1,18 @@
 * {
 	box-sizing: border-box;
 }
+h1{
+   box-sizing: border-box 20px;
+   box-shadow: 10px;
+   text-align: center;
+   text-decoration: solid grey;
+   background-color: rgb(190, 185, 219);
+}
+
+h3{
+	font-style: normal;
+	font-family: Arial, Helvetica, sans-serif;
+}
 
 body {
 	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -22,6 +34,7 @@ a, button{
 	font-size: 0.8rem;
 	text-decoration: solid;
 	cursor: pointer;
+	border-radius: 20px;
 }
 
 .job h3{
@@ -35,4 +48,16 @@ a, button{
 	display: grid;
 	align-items: center;
 	justify-content: space-between;
+	background-color: lightblue;
+	
+}
+
+.controls{
+	display: flex;
+	gap: 0.5rem;
+}
+
+.controls a{
+	display: inline;
+	height: 23px;
 }

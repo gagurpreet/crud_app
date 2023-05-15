@@ -37,7 +37,7 @@ def like(id):
 
 def comment(id):
   content = request.form.get('content')
-  comment_job(id, content)
+  comment_job(id, session['user_id'])
   return redirect('/')
 
 

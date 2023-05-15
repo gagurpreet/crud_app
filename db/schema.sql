@@ -30,5 +30,6 @@ CREATE TABLE likes(
 
 CREATE TABLE comments(
   id SERIAL PRIMARY KEY,
-   content TEXT
+  user_id INTEGER,
+  job_id INTEGER
 );
