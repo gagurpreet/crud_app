@@ -60,7 +60,7 @@ a, button{
 	display: flex;
 	width: 100%;
 	justify-content: space-between;
-	gap: 5px;
+	gap: 3px;
 }
 
 .controls a{
@@ -85,8 +85,25 @@ flex-direction:column;
 	justify-content: space-around;
 	width: 100%;
 	height: fit-content;
-	line-height: 20px;
-	gap: 15px;
-	
+	line-height: 15px;
+	gap: 10px;
 	padding: 10px;
+}
+
+ .comment{
+	display: flex;
+	font-style: normal;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 100%;
+	height: fit-content;
+	line-height: 10px;
+	gap: 10px;
+	padding: 10px;
+}
+
+.job h3,h4 {
+	display: flex;
+	height: fit-content;
+	
 }
