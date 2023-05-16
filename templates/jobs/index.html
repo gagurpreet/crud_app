@@ -7,22 +7,25 @@
 		<h3>Welcome to the Jobs Portal {{ current_user['first_name'] }},</h3>
 
 		<section class="controls">
+
+			<a href="/jobs/new">Add job</a>
+
 			<form action="/sessions/delete" method="POST">
 			<button>Log out</button>
 			</form>
 
-			<a href="/jobs/new">Add job</a>	
 		</section>  
 		
 		<section class="jobs">
 			{% for job in jobs: %}
 				<section class="job">
-					<header>
-						<h3>Company Name: {{ job['company_name'] }}</h3>
-						<h3>Job Level: {{ job['job_level'] }}</h3>
-						<h4><a href="{{ job['job_link'] }}">click here for job description</a></h4>
-						
+					
 
+						<section class="job-details">
+							<h3>Company Name: {{ job['company_name'] }}</h3>
+							<h3>Job Level: {{ job['job_level'] }}</h3>
+							<h4><a href="{{ job['job_link'] }}">click here for job description</a></h4>
+						</section>
 						<section class="controls">
 							
 							<a href="/jobs/{{ job['id'] }}/edit">Edit</a>
@@ -39,17 +42,18 @@
 								<button>More</button>
 							</form>
 
-							<form action="/jobs/{{job['id']}}/comments" method="POST">
-															
-								<label for="content">Comment:</label>
-								<textarea id="content" placeholder="Write your comment for the above job here" name="content" required></textarea><br>
 							
-								<input type="submit" value="Submit">
-							  </form>
 
 						</section>
 
-					</header>
+						<form action="/jobs/{{job['id']}}/comments" method="POST">
+															
+							<label for="content">Comment:</label>
+							<textarea id="content" placeholder="Write your comment for the above job here" name="content" required></textarea><br>
+						
+							<input type="submit" value="Submit">
+						  </form>
+					
 				</section>
 			{% endfor %}
 		</section>

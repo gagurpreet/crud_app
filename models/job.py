@@ -22,9 +22,11 @@ def like_job(job_id, user_id):
 def comment_job(job_id, user_id, content):
   sql("INSERT INTO comments(user_id, job_id, content) VALUES(%s, %s, %s) RETURNING *", [user_id, job_id, content])
 
-def get_comment(id):
-  comment = sql("SELECT * FROM comments WHERE id = %s", [id])
-  return comment[0]
+def get_all_comments():
+ return sql("SELECT *FROM comments" )
+
+  
+ 
 
 def get_job_by_id(id):
   job = sql("SELECT * FROM jobs WHERE id = %s", [id])

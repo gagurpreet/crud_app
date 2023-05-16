@@ -1,5 +1,5 @@
 from flask import render_template, redirect, request, session
-from models.job import all_jobs, get_job, create_job,update_job, delete_job, like_job, comment_job, get_comment, get_job_by_id
+from models.job import all_jobs, get_job, create_job,update_job, delete_job, like_job, comment_job, get_all_comments, get_job_by_id
 from services.session_info import current_user
 
 def index():
@@ -41,8 +41,8 @@ def comment(id):
   return redirect('/')
 
 def more(id):
-  comment = get_comment(id)
+  comments = get_all_comments()
   job = get_job_by_id(id)
-  return render_template('jobs/more.html', comment=comment, current_user=current_user(), job= job)
+  return render_template('jobs/more.html', comments=comments, current_user=current_user(), job= job)
   
 
