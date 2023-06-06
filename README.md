@@ -9,12 +9,12 @@ Special note: I am running the web application on Free-to-use service with very 
 Using our project is incredibly straightforward. Just follow these simple steps:
 1. Click on the link provided above, and you will be redirected to the live page.
 2. On the live page, you will find various options to explore:
-    - Sign up, log in & log out: Create an account or log in to access your personal account.
-    - Apply Job: Select from a range of jobs and apply.
-    - Comment: you can comment on the job and share them with others.
-    - Edit job: Modify existing job with current role available in your personalized account.
-    - Delete jobs: Remove any job depending on interest in your personalized account.
-    - like jobs: User can like job and make others to apply for the job by increasing its popularity in job portal.
+    - **Sign up, log in & log out**: Create an account or log in to access your personal account.
+    - **Apply Job**: Select from a range of jobs and apply.
+    - **Comment job**: you can comment on the job and share them with others.
+    - **Edit job**: Modify existing job with current role available in your personalized account.
+    - **Delete job**: Remove any job depending on interest in your personalized account.
+    - **like job**: User can like job and make others to apply for the job by increasing its popularity in job portal.
 
 
 
